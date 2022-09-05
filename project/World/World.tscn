@@ -166,6 +166,9 @@ tile_data = PoolIntArray( 4, 6, 0, 9, 6, 0, 196617, 6, 0, 262144, 0, 0, 262145, 
 
 [node name="Target" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1215, 448 )
+mass = 40.0
+gravity_scale = 2.0
+contact_monitor = true
 
 [node name="BowAndArrow" parent="." instance=ExtResource( 7 )]
 position = Vector2( 61, 457 )
