@@ -26,6 +26,7 @@ flip_h = true
 
 [node name="Arrow" type="RigidBody2D" parent="."]
 visible = false
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="ArrowCollision" type="CollisionShape2D" parent="Arrow"]
