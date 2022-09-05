@@ -5,7 +5,9 @@ func _process(_delta):
 	
 	if Input.is_action_pressed("shoot"):
 		prepare_arrow()
-		$Arrow.apply_impulse(Vector2.ZERO, Vector2(100, 0).rotated(deg2rad($BowSprite.rotation_degrees)))
+		var impulse = Vector2(100, 0).rotated(deg2rad($BowSprite.rotation_degrees))
+		$Arrow.apply_impulse(Vector2.ZERO, impulse)
+		$BowSprite.set_texture(preload("res://Bow/Bow.png"))
 		
 	elif Input.is_action_pressed("aim_higher"):
 		$BowSprite.rotation_degrees -= 1
