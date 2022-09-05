@@ -6,7 +6,7 @@ func _process(_delta):
 	if Input.is_action_pressed("shoot"):
 		$Arrow/ArrowSprite.rotation_degrees = $BowSprite.rotation_degrees
 		$Arrow.visible = true
-		$Arrow.gravity_scale = 4
+		$Arrow.gravity_scale = 5
 		$Arrow.apply_impulse(Vector2.ZERO, Vector2(100, 0).rotated(deg2rad($BowSprite.rotation_degrees)))
 		$Arrow/CollisionShape2D.disabled = false
 	

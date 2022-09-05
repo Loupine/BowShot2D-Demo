@@ -14,7 +14,7 @@ height = 82.0
 rotation = 0.69115
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BowCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 22.6531, 38.3646 )
 rotation = 0.879646
 shape = SubResource( 3 )
@@ -28,7 +28,7 @@ flip_h = true
 visible = false
 gravity_scale = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow"]
+[node name="ArrowCollision" type="CollisionShape2D" parent="Arrow"]
 position = Vector2( 3.34823, -5.36557 )
 rotation = 0.879646
 shape = SubResource( 2 )
