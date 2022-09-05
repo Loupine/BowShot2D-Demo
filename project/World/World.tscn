@@ -165,10 +165,12 @@ format = 1
 tile_data = PoolIntArray( 4, 6, 0, 9, 6, 0, 196617, 6, 0, 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 2, 0, 327680, 3, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 5, 0 )
 
 [node name="Target" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1215, 448 )
-mass = 40.0
-gravity_scale = 2.0
+position = Vector2( 1216, 390 )
+mode = 3
+contacts_reported = 1
 contact_monitor = true
 
 [node name="BowAndArrow" parent="." instance=ExtResource( 7 )]
 position = Vector2( 61, 457 )
+
+[connection signal="body_entered" from="Target" to="Target" method="_on_Target_body_entered"]
