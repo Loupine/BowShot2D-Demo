@@ -20,7 +20,8 @@ func _process(_delta):
 	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -90, 0)
 
 func prepare_arrow():
-	#makes sure the arrow is fired in the right orientation, is visible, has colision, and has gravity
+	#makes sure the arrow is fired in the right orientation, is visible, 
+	#has colision, and has gravity before firing
 	$Arrow/ArrowSprite.rotation_degrees = $BowSprite.rotation_degrees
 	$Arrow.gravity_scale = 5
 	$Arrow.visible = true
