@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World/Tiles/GrassLeft.png" type="Texture" id=1]
 [ext_resource path="res://World/Tiles/Dirt.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://World/Tiles/DirtRight.png" type="Texture" id=6]
 [ext_resource path="res://Bow/BowAndArrow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Target/Target.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Target/Target.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -169,6 +170,7 @@ position = Vector2( 1216, 390 )
 mode = 3
 contacts_reported = 1
 contact_monitor = true
+script = ExtResource( 9 )
 
 [node name="BowAndArrow" parent="." instance=ExtResource( 7 )]
 position = Vector2( 61, 457 )
