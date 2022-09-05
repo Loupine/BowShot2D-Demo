@@ -1,22 +1,24 @@
 extends RigidBody2D
 
 var shot = false
+var power = 300
 
 func _process(_delta):
-	if Input.is_action_pressed("shoot") and not shot:
-		prepare_arrow()
-		var impulse = Vector2(300, 0).rotated(deg2rad($BowSprite.rotation_degrees))
-		$Arrow.apply_impulse(Vector2.ZERO, impulse)
-		$BowSprite.set_texture(preload("res://Bow/Bow.png"))
-		shot = true
+	if not shot:
+		if Input.is_action_pressed("shoot"):
+			prepare_arrow()
+			var impulse = Vector2(power, 0).rotated(deg2rad($BowSprite.rotation_degrees))
+			$Arrow.apply_impulse(Vector2.ZERO, impulse)
+			$BowSprite.set_texture(preload("res://Bow/Bow.png"))
+			shot = true
 		
-	elif Input.is_action_pressed("aim_higher"):
-		$BowSprite.rotation_degrees -= 1
-		print($BowSprite.rotation_degrees)
+		elif Input.is_action_pressed("aim_higher"):
+			$BowSprite.rotation_degrees -= 1
+			print($BowSprite.rotation_degrees)
 		
-	elif Input.is_action_pressed("aim_lower"):
-		$BowSprite.rotation_degrees += 1
-		print($BowSprite.rotation_degrees)
+		elif Input.is_action_pressed("aim_lower"):
+			$BowSprite.rotation_degrees += 1
+			print($BowSprite.rotation_degrees)
 	
 	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -90, 0)
 
