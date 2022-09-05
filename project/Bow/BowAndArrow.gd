@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var shot = false
-var power = 300
+var power = 200
 
 func _process(_delta):
 	if not shot:
@@ -19,7 +19,15 @@ func _process(_delta):
 		elif Input.is_action_pressed("aim_lower"):
 			$BowSprite.rotation_degrees += 1
 			print($BowSprite.rotation_degrees)
+		
+		elif Input.is_action_pressed("increase_power"):
+			power += 10
+			print(power)
+		elif Input.is_action_pressed("decrease_power"):
+			power -= 10
+			print(power)
 	
+	power = clamp(power, 0, 600)
 	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -90, 0)
 
 func prepare_arrow():
