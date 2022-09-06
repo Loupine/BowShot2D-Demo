@@ -32,7 +32,7 @@ func _process(_delta):
 		#The line is printed to remove the unused value debugger warning
 		print(get_tree().reload_current_scene())
 	
-	power = clamp(power, 0, 600)
+	power = clamp(power, 10, 600)
 	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -90, 0)
 
 func prepare_arrow():
