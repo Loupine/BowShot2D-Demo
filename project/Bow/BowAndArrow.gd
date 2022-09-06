@@ -14,18 +14,18 @@ func _process(_delta):
 		
 		elif Input.is_action_pressed("aim_higher"):
 			$BowSprite.rotation_degrees -= 1
-			print($BowSprite.rotation_degrees)
+			print('Angle: ', $BowSprite.rotation_degrees)
 		
 		elif Input.is_action_pressed("aim_lower"):
 			$BowSprite.rotation_degrees += 1
-			print($BowSprite.rotation_degrees)
+			print('Angle: ', $BowSprite.rotation_degrees)
 		
 		elif Input.is_action_pressed("increase_power"):
 			power += 10
-			print(power)
+			print('Power: ', power)
 		elif Input.is_action_pressed("decrease_power"):
 			power -= 10
-			print(power)
+			print('Power: ', power)
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
 		#Resets only the BowAndArrow scene and all values within
