@@ -27,6 +27,11 @@ func _process(_delta):
 			power -= 10
 			print(power)
 	
+	elif Input.is_action_pressed("reset_bow_and_arrow"):
+		#Resets only the BowAndArrow scene and all values within
+		#The line is printed to remove the unused value debugger warning
+		print(get_tree().reload_current_scene())
+	
 	power = clamp(power, 0, 600)
 	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -90, 0)
 
