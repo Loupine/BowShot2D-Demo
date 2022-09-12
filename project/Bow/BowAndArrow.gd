@@ -14,26 +14,26 @@ func _process(_delta):
 		
 		elif Input.is_action_pressed("aim_higher"):
 			$BowSprite.rotation_degrees -= 1
-			print('Angle: ', $BowSprite.rotation_degrees)
+			print('Angle: ', round(-$BowSprite.rotation_degrees))
 		
 		elif Input.is_action_pressed("aim_lower"):
 			$BowSprite.rotation_degrees += 1
-			print('Angle: ', $BowSprite.rotation_degrees)
+			print('Angle: ', round(-$BowSprite.rotation_degrees))
 		
 		elif Input.is_action_pressed("increase_power"):
 			power += 10
-			print('Power: ', power)
+			print('Power: ', round(power))
 		elif Input.is_action_pressed("decrease_power"):
 			power -= 10
-			print('Power: ', power)
+			print('Power: ', round(power))
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
 		#Resets only the BowAndArrow scene and all values within
 		#The line is printed to remove the unused value debugger warning
 		print(get_tree().reload_current_scene())
 	
-	power = clamp(power, 10, 600)
-	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -90, 0)
+	power = clamp(power, 10, 590)
+	$BowSprite.rotation_degrees = clamp($BowSprite.rotation_degrees, -89, -1)
 
 func prepare_arrow():
 	#makes sure the arrow is fired in the right orientation, is visible, 
