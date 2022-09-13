@@ -53,3 +53,7 @@ func create_new_arrow():
 	var new_arrow = arrow_projectile.instance()
 	current_arrow = new_arrow
 	add_child(current_arrow)
+
+func _on_ObjectKillArea_body_exited(body):
+	body.queue_free()
+	print("deleted")
