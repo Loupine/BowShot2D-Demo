@@ -54,6 +54,6 @@ func create_new_arrow():
 	current_arrow = new_arrow
 	add_child(current_arrow)
 
+#Delete arrows that exit the ObjectKillArea's collision shape
 func _on_ObjectKillArea_body_exited(body):
 	body.queue_free()
-	print("deleted")
