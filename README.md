@@ -18,6 +18,8 @@ An implementation of Godot's physics system for Project 1, Iteration 1 of CS315.
 
 - Target sprite from [Kenny's Shooting Gallery](https://www.kenney.nl/assets/shooting-gallery), licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 
+- Bow sound effect from [Erdie's bow01.wav](https://freesound.org/people/Erdie/sounds/65733/), licensed under [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ## Project Report:
 
 ### Reflection
