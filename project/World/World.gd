@@ -6,9 +6,8 @@ var power = 200
 func _process(_delta):
 	if not shot:
 		if Input.is_action_pressed("shoot"):
-			var impulse = Vector2(power, 0).rotated(deg2rad($Bow/BowSprite.rotation_degrees))
 			$Arrow.prepare_arrow($Bow/BowSprite.rotation_degrees)
-			$Arrow.apply_impulse(Vector2.ZERO, impulse)
+			$Arrow.shoot_arrow(power)
 			$Bow/BowSprite.set_texture(preload("res://Bow/Bow.png"))
 			shot = true
 		
