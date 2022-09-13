@@ -1,5 +1,9 @@
 extends Node2D
 
+signal power_changed(new_power)
+signal angle_changed(new_angle)
+signal inventory_size_changed(new_inventory_size)
+
 var shot = false
 var power = 200
 var arrow_inventory = 5
@@ -22,23 +26,29 @@ func _process(_delta):
 		elif Input.is_action_pressed("aim_higher"):
 			$Bow/BowSprite.rotation_degrees -= 1
 			print('Angle: ', round(-$Bow/BowSprite.rotation_degrees))
+			emit_signal("angle_changed", -$Bow/BowSprite.rotation_degrees)
 		
 		elif Input.is_action_pressed("aim_lower"):
 			$Bow/BowSprite.rotation_degrees += 1
 			print('Angle: ', round(-$Bow/BowSprite.rotation_degrees))
+			emit_signal("angle_changed", -$Bow/BowSprite.rotation_degrees)
 		
 		elif Input.is_action_pressed("increase_power"):
 			power += 10
 			print('Power: ', round(power))
+			emit_signal("power_changed", power)
 			
 		elif Input.is_action_pressed("decrease_power"):
 			power -= 10
 			print('Power: ', round(power))
+			emit_signal("power_changed", power)
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
 		#Creates a new arrow instance and reloads the bow if arrows are left
 		if arrow_inventory > 1:
 			arrow_inventory -= 1
+			emit_signal("inventory_size_changed", arrow_inventory)
+			
 			create_new_arrow()
 			$Bow/BowSprite.set_texture(preload("res://Bow/BowLoaded.png"))
 			shot = false
