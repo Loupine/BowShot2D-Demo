@@ -2,14 +2,23 @@ extends Node2D
 
 var shot = false
 var power = 200
+var arrow_inventory = 5
+const arrow_projectile = preload("res://Arrow/Arrow.tscn")
+var current_arrow
+
+func _ready():
+	current_arrow = arrow_projectile.instance()
+	current_arrow.name += str(get_child_count())
+	add_child(current_arrow)
 
 func _process(_delta):
 	if not shot:
 		if Input.is_action_pressed("shoot"):
-			$Arrow.prepare_arrow($Bow/BowSprite.rotation_degrees)
-			$Arrow.shoot_arrow(power)
+			current_arrow.prepare_arrow($Bow/BowSprite.rotation_degrees)
+			current_arrow.shoot_arrow(power)
 			$Bow/BowSprite.set_texture(preload("res://Bow/Bow.png"))
 			shot = true
+			print(arrow_inventory)
 		
 		elif Input.is_action_pressed("aim_higher"):
 			$Bow/BowSprite.rotation_degrees -= 1
@@ -28,10 +37,20 @@ func _process(_delta):
 			print('Power: ', round(power))
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
-		#Resets only the Bow Arrow scenes
-		#The lines are printed to remove the unused value debugger warning
-		print($Arrow.get_tree().reload_current_scene())
-		print($Bow.get_tree().reload_current_scene())
-	
+		#Creates a new arrow instance and reloads the bow if arrows are left
+		if arrow_inventory > 0:
+			arrow_inventory -= 1
+			create_new_arrow()
+			$Bow/BowSprite.set_texture(preload("res://Bow/BowLoaded.png"))
+			shot = false
+		else:
+			print("You're out of arrows!!!!")
+		
 	$Bow/BowSprite.rotation_degrees = clamp($Bow/BowSprite.rotation_degrees, -89, -1)
 	power = clamp(power, 10, 590)
+
+func create_new_arrow():
+	var new_arrow = arrow_projectile.instance()
+	new_arrow.name += str(get_child_count()) 
+	current_arrow = new_arrow
+	add_child(current_arrow)
