@@ -22,6 +22,8 @@ func _process(_delta):
 			$Bow/BowSprite.set_texture(preload("res://Bow/Bow.png"))
 			$Bow/BowSound.playing = true
 			shot = true
+			arrow_inventory -= 1
+			emit_signal("inventory_size_changed", arrow_inventory)
 		
 		elif Input.is_action_pressed("aim_higher"):
 			$Bow/BowSprite.rotation_degrees -= 1
@@ -41,10 +43,7 @@ func _process(_delta):
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
 		#Creates a new arrow instance and reloads the bow if arrows are left
-		if arrow_inventory > 1:
-			arrow_inventory -= 1
-			emit_signal("inventory_size_changed", arrow_inventory)
-			
+		if arrow_inventory > 0:
 			create_new_arrow()
 			$Bow/BowSprite.set_texture(preload("res://Bow/BowLoaded.png"))
 			shot = false
