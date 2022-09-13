@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World/Tiles/GrassLeft.png" type="Texture" id=1]
 [ext_resource path="res://World/Tiles/Dirt.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Target/Target.gd" type="Script" id=9]
 [ext_resource path="res://World/World.gd" type="Script" id=10]
 [ext_resource path="res://Arrow/Arrow.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Arrow/Arrow.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -181,5 +182,6 @@ position = Vector2( 61, 457 )
 [node name="Arrow" parent="." instance=ExtResource( 11 )]
 visible = false
 position = Vector2( 62, 462 )
+script = ExtResource( 12 )
 
 [connection signal="body_entered" from="Target" to="Target" method="_on_Target_body_entered"]

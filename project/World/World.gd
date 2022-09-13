@@ -6,8 +6,8 @@ var power = 200
 func _process(_delta):
 	if not shot:
 		if Input.is_action_pressed("shoot"):
-			prepare_arrow()
 			var impulse = Vector2(power, 0).rotated(deg2rad($Bow/BowSprite.rotation_degrees))
+			$Arrow.prepare_arrow($Bow/BowSprite.rotation_degrees)
 			$Arrow.apply_impulse(Vector2.ZERO, impulse)
 			$Bow/BowSprite.set_texture(preload("res://Bow/Bow.png"))
 			shot = true
@@ -23,22 +23,16 @@ func _process(_delta):
 		elif Input.is_action_pressed("increase_power"):
 			power += 10
 			print('Power: ', round(power))
+			
 		elif Input.is_action_pressed("decrease_power"):
 			power -= 10
 			print('Power: ', round(power))
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
-		#Resets only the BowAndArrow scene and all values within
-		#The line is printed to remove the unused value debugger warning
-		print(get_tree().reload_current_scene())
+		#Resets only the Bow Arrow scenes
+		#The lines are printed to remove the unused value debugger warning
+		print($Arrow.get_tree().reload_current_scene())
+		print($Bow.get_tree().reload_current_scene())
 	
-	power = clamp(power, 10, 590)
 	$Bow/BowSprite.rotation_degrees = clamp($Bow/BowSprite.rotation_degrees, -89, -1)
-
-func prepare_arrow():
-	#makes sure the arrow is fired in the right orientation, is visible, 
-	#has colision, and has gravity before firing
-	$Arrow/ArrowSprite.rotation_degrees = $Bow/BowSprite.rotation_degrees
-	$Arrow.gravity_scale = 1
-	$Arrow.visible = true
-	$Arrow/ArrowCollision.disabled = false
+	power = clamp(power, 10, 590)
