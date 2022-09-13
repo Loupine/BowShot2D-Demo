@@ -25,22 +25,18 @@ func _process(_delta):
 		
 		elif Input.is_action_pressed("aim_higher"):
 			$Bow/BowSprite.rotation_degrees -= 1
-			print('Angle: ', round(-$Bow/BowSprite.rotation_degrees))
 			emit_signal("angle_changed", -$Bow/BowSprite.rotation_degrees)
 		
 		elif Input.is_action_pressed("aim_lower"):
 			$Bow/BowSprite.rotation_degrees += 1
-			print('Angle: ', round(-$Bow/BowSprite.rotation_degrees))
 			emit_signal("angle_changed", -$Bow/BowSprite.rotation_degrees)
 		
 		elif Input.is_action_pressed("increase_power"):
 			power += 10
-			print('Power: ', round(power))
 			emit_signal("power_changed", power)
 			
 		elif Input.is_action_pressed("decrease_power"):
 			power -= 10
-			print('Power: ', round(power))
 			emit_signal("power_changed", power)
 	
 	elif Input.is_action_pressed("reset_bow_and_arrow"):
@@ -52,9 +48,6 @@ func _process(_delta):
 			create_new_arrow()
 			$Bow/BowSprite.set_texture(preload("res://Bow/BowLoaded.png"))
 			shot = false
-			print("arrows left " + str(arrow_inventory))
-		else:
-			print("You're out of arrows!!!!")
 		
 	$Bow/BowSprite.rotation_degrees = clamp($Bow/BowSprite.rotation_degrees, -89, -1)
 	power = clamp(power, 10, 590)
