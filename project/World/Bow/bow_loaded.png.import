@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/target_colored.png-7d72e141e1788dd673d0465e364f86f8.stex"
+path="res://.import/bow_loaded.png-ac4bc769d2291562bb83051ed0c0d0fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Target/target_colored.png"
-dest_files=[ "res://.import/target_colored.png-7d72e141e1788dd673d0465e364f86f8.stex" ]
+source_file="res://World/Bow/bow_loaded.png"
+dest_files=[ "res://.import/bow_loaded.png-ac4bc769d2291562bb83051ed0c0d0fd.stex" ]
 
 [params]
 

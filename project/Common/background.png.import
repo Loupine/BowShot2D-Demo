@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bow_loaded.png-6c25d8cfe86a896b12a80326b7f23629.stex"
+path="res://.import/background.png-93a9be374eb0a93ed843613f23fd5fff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bow/bow_loaded.png"
-dest_files=[ "res://.import/bow_loaded.png-6c25d8cfe86a896b12a80326b7f23629.stex" ]
+source_file="res://Common/background.png"
+dest_files=[ "res://.import/background.png-93a9be374eb0a93ed843613f23fd5fff.stex" ]
 
 [params]
 

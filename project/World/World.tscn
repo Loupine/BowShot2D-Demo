@@ -6,13 +6,13 @@
 [ext_resource path="res://World/Tiles/grass_mid.png" type="Texture" id=4]
 [ext_resource path="res://World/Tiles/dirt_left.png" type="Texture" id=5]
 [ext_resource path="res://World/Tiles/dirt_right.png" type="Texture" id=6]
-[ext_resource path="res://Bow/Bow.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Target/Target.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Target/Target.gd" type="Script" id=9]
+[ext_resource path="res://World/Bow/Bow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Target/Target.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/Target/Target.gd" type="Script" id=9]
 [ext_resource path="res://World/World.gd" type="Script" id=10]
-[ext_resource path="res://World/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/HUD/HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://World/ObjectKillArea.tscn" type="PackedScene" id=12]
-[ext_resource path="res://World/HUD.gd" type="Script" id=13]
+[ext_resource path="res://World/HUD/HUD.gd" type="Script" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
