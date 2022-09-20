@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bowshot_music.ogg-7b8d01ea756beee6aa326e044e1c16ef.oggstr"
+
+[deps]
+
+source_file="res://World/bowshot_music.ogg"
+dest_files=[ "res://.import/bowshot_music.ogg-7b8d01ea756beee6aa326e044e1c16ef.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

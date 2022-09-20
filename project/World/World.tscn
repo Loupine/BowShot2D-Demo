@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://World/Tiles/grass_left.png" type="Texture" id=1]
 [ext_resource path="res://World/Tiles/dirt.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://World/HUD/HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://World/ObjectKillArea.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/HUD/HUD.gd" type="Script" id=13]
+[ext_resource path="res://World/bowshot_music.ogg" type="AudioStream" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -187,6 +188,11 @@ position = Vector2( 61, 457 )
 
 [node name="ObjectKillArea" parent="." instance=ExtResource( 12 )]
 visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -2.0
+autoplay = true
 
 [connection signal="angle_changed" from="." to="HUD" method="_on_World_angle_changed"]
 [connection signal="inventory_size_changed" from="." to="HUD" method="_on_World_inventory_size_changed"]
