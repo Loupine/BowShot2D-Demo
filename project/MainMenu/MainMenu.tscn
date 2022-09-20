@@ -204,7 +204,7 @@ margin_bottom = -340.0
 rect_scale = Vector2( 3, 3 )
 text = "PLAY!"
 
-[node name="AnimatonPlayer" type="AnimationPlayer" parent="."]
+[node name="MenuAnimatonPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../PlayButton")
 autoplay = "SlideIn"
 anims/RESET = SubResource( 1 )
