@@ -47,6 +47,9 @@ func _process(_delta):
 			create_new_arrow()
 			$Bow/BowSprite.set_texture(preload("res://Bow/BowLoaded.png"))
 			shot = false
+		else:
+			# return player to MainMenu and restart game
+			print(get_tree().change_scene_to(load("res://MainMenu/MainMenu.tscn")))
 		
 	$Bow/BowSprite.rotation_degrees = clamp($Bow/BowSprite.rotation_degrees, -89, -1)
 	power = clamp(power, 10, 590)
