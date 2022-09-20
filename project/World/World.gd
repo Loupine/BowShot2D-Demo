@@ -25,7 +25,7 @@ func _process(_delta):
 			current_arrow.prepare_arrow($Bow/BowSprite.rotation_degrees)
 			current_arrow.shoot_arrow(power)
 			
-			$Bow/BowSprite.set_texture(preload("res://Bow/Bow.png"))
+			$Bow/BowSprite.set_texture(preload("res://Bow/bow.png"))
 			$Bow/BowSound.playing = true
 			
 			has_shot = true
@@ -52,7 +52,7 @@ func _process(_delta):
 		#Creates a new arrow instance and reloads the bow if arrows are left
 		if arrow_inventory > 0:
 			create_new_arrow()
-			$Bow/BowSprite.set_texture(preload("res://Bow/BowLoaded.png"))
+			$Bow/BowSprite.set_texture(preload("res://Bow/bow_loaded.png"))
 			has_shot = false
 			
 		else:
