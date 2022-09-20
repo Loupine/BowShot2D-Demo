@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo.png-0ea2974cb7ec21b689776a9fab2a63df.stex"
+path="res://.import/bowshot_logo.png-3ae73cb074761c251b141337307d516e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MainMenu/logo.png"
-dest_files=[ "res://.import/logo.png-0ea2974cb7ec21b689776a9fab2a63df.stex" ]
+source_file="res://MainMenu/bowshot_logo.png"
+dest_files=[ "res://.import/bowshot_logo.png-3ae73cb074761c251b141337307d516e.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://MainMenu/logo.png" type="Texture" id=1]
+[ext_resource path="res://MainMenu/bowshot_logo.png" type="Texture" id=1]
 [ext_resource path="res://Common/background.png" type="Texture" id=2]
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=3]
 

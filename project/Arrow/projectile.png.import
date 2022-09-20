@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dirt.png-aba014601320c3d4d66cc1a6a7002161.stex"
+path="res://.import/projectile.png-90ee6e505bb218c1f9a4222628559d94.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Tiles/dirt.png"
-dest_files=[ "res://.import/dirt.png-aba014601320c3d4d66cc1a6a7002161.stex" ]
+source_file="res://Arrow/projectile.png"
+dest_files=[ "res://.import/projectile.png-90ee6e505bb218c1f9a4222628559d94.stex" ]
 
 [params]
 
